@@ -42,23 +42,23 @@ $ # Configure environment variables in .env file
 $ docker-compose up --build
 ```
 
-Ensure that you have valid API credentials from Google and adjust the environment variables in the .env file accordingly.
+Ensure that you have adjust the environment variables in the `.env` file accordingly.
 
 ## Docker Compose Configuration
-The docker-compose.yml file defines two services: web and redis.
+The `docker-compose.yml` file defines two services: web and redis.
 
 ## Service: web
-- Container Name: app
-- Build: Builds the Docker image using the Dockerfile located in ./app_django.
-- Command: Runs the Django development server (python manage.py runserver 0.0.0.0:8000).
-- Volumes: Mounts the local ./app_django/ directory to the /app/ directory inside the container.
-- Ports: Forwards the container's port 8000 to the host's port 4000.
-- Environment File: Loads the environment variables from ./.env.
+- Container Name: `app`
+- Build: Builds the Docker image using the Dockerfile located in `./app_django`.
+- Command: Runs the Django development server (`python manage.py runserver 0.0.0.0:8000`).
+- Volumes: Mounts the local `./app_django/` directory to the `/app/` directory inside the container.
+- Ports: Forwards the container's port `8000` to the host's port `4000`.
+- Environment File: Loads the environment variables from `./.env`.
 
 ## Service: redis
-- Container Name: redis
+- Container Name: `redis`
 - Image: Uses the official Redis Docker image.
-- Ports: Forwards the container's port 6379 to the host's port 6379.
+- Ports: Forwards the container's port `6379` to the host's port `6379`.
 - Contributions
 - Contributions to this project are welcome! If you have any suggestions, bug fixes, or additional features to propose, feel free to open an issue or submit a pull request on GitHub.
 
