@@ -10,8 +10,9 @@ The temperature data is cached in Redis for a duration of 1 minute. Subsequent r
 
 ## Dependencies
 
-- Django: The web framework used to develop this application.
-- Redis: Used as a caching mechanism for storing temperature data.
+- Python 3.10
+- Django 4.2.1: The web framework used to develop this application.
+- Redis 4.5.5: Used as a caching mechanism for storing temperature data.
 - Google Search: The primary source of temperature information.
 
 ## Installation
@@ -20,7 +21,18 @@ To install and run this Django Weather App locally using Docker containers, foll
 
 1. Clone the repository from GitHub.
 2. Install Docker and Docker Compose on your machine.
-3. Configure the necessary environment variables in the `.env` file.
+3. Create an `.env` file in the root directory and configure the necessary environment variables. Here's an example of the `.env` file contents:
+
+
+```plaintext
+SECRET_KEY=SomeSecretString
+DEBUG=1
+ALLOWED_HOSTS=localhost,127.0.0.1,[::1]
+REDIS_HOST='redis'
+REDIS_PORT=6379
+CITY='New York'
+```
+
 4. Build and run the Docker containers using Docker Compose.
 
 ```bash
